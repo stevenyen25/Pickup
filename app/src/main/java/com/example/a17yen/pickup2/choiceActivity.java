@@ -25,30 +25,40 @@ import android.content.Intent;
 
 public class choiceActivity extends AppCompatActivity {
     TextView text;
+    public Button chemB;
+    public Button csB;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subject);
+
+        clickChem();
+        clickCS();
     }
-//
-//        Button chemB = (Button) findViewById(R.id.ChemButton);
-//        Button csB = (Button) findViewById(R.id.CSButton);
-//
-//
-//        chemB.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent myIntent = new Intent(view.getContext(), ChemActivity.class);
-//            }
-//        });
-//
-//        csB.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent myIntent = new Intent(view.getContext(), csActivity.class);
-//            }
-//        });
-//    }
+
+
+
+    public void clickChem(){
+        chemB=(Button)findViewById(R.id.ChemButton);
+        chemB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent transitionChem = new Intent(choiceActivity.this,ChemActivity.class);
+                startActivity(transitionChem);
+            }
+        });
+    }
+
+    public void clickCS(){
+        csB=(Button)findViewById(R.id.CSButton);
+        csB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent transitionCS = new Intent(choiceActivity.this,csActivity.class);
+                startActivity(transitionCS);
+            }
+        });
+    }
 }

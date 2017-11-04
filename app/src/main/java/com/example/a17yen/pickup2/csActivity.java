@@ -10,10 +10,6 @@ import android.widget.TextView;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 public class csActivity extends AppCompatActivity{
     TextView text;
@@ -24,11 +20,11 @@ public class csActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_cs);
 
 
-        text = (TextView)findViewById(R.id.csBody);
-        Button button = (Button) findViewById(R.id.csGenerate);
+        text = findViewById(R.id.csBody);
+        Button button = findViewById(R.id.csGenerate);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
