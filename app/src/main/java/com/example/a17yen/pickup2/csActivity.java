@@ -12,11 +12,14 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.util.Random;
+
 public class csActivity extends AppCompatActivity{
     TextView text;
     String [] elements;
     int index = 0;
-    public Button button;
+    public Button button1;
+    public Button button2;
     boolean isDone;
 
 
@@ -28,13 +31,25 @@ public class csActivity extends AppCompatActivity{
         text = findViewById(R.id.csBody);
 
         click();
+        clickRandom();
         new csActivity.scrapeCS().execute();
 
     }
 
+    public void clickRandom(){
+        button2 = findViewById(R.id.randomizeButtonCS);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int n = guarenteedRandomize();
+                text.setText(elements[n]);
+            }
+        });
+    }
+
     public void click(){
-        button = findViewById(R.id.csGenerate);
-        button.setOnClickListener(new View.OnClickListener() {
+        button1 = findViewById(R.id.csGenerate);
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(elements[index].equals(" </span>")) { isDone = true; }
@@ -47,6 +62,12 @@ public class csActivity extends AppCompatActivity{
                 }
             }
         });
+    }
+
+    public int guarenteedRandomize(){
+        Random rand = new Random();
+        int n = rand.nextInt(40)+1;
+        return n;
     }
 
     public class scrapeCS extends AsyncTask<Void, Void, Void> {

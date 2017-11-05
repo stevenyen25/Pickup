@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.Random;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -14,7 +15,8 @@ import org.jsoup.select.Elements;
 public class ChemActivity extends AppCompatActivity{
     public String [] elements;
     public TextView text;
-    public Button button;
+    public Button button1;
+    public Button button2;
     public int index = 0;
     boolean isDone = false;
 
@@ -25,12 +27,24 @@ public class ChemActivity extends AppCompatActivity{
         text = (TextView)findViewById(R.id.chemBody);
 
         click();
+        clickRandom();
         new ChemActivity.scrapeChem().execute();
     }
 
+    public void clickRandom(){
+        button2 = findViewById(R.id.randomizeButtonChem);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int n = guarenteedRandomize();
+                text.setText(elements[n]);
+            }
+        });
+    }
+
     public void click(){
-        button = findViewById(R.id.chemGenerate);
-        button.setOnClickListener(new View.OnClickListener() {
+        button1 = findViewById(R.id.chemGenerate);
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(elements[index].equals(" </span>")) { isDone = true; }
@@ -39,10 +53,16 @@ public class ChemActivity extends AppCompatActivity{
                     index++;
                 }
                 else{
-                    text.setText("This is the end of BioChem Lines, check out our CompSci Lines!!");
+                    text.setText("This is the end of BioChem Lines, check out our CS Lines!!");
                 }
             }
         });
+    }
+
+    public int guarenteedRandomize(){
+        Random rand = new Random();
+        int n = rand.nextInt(40)+1;
+        return n;
     }
 
 
@@ -62,7 +82,7 @@ public class ChemActivity extends AppCompatActivity{
                 int count = 0;
                 for(int i = 0; i < stringArr.length; i++){
                     if(stringArr[i].charAt(0)=='<') {continue;}
-                    if((!stringArr[i].equals(" "))) {
+                    if((!(stringArr[i].equals(" ")))) {
                         elements[count++] = stringArr[i];
                     }
                 }
