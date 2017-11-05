@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/SkyBlue">
+    android:background="@drawable/gradient_background">
+
 
     <TextView
         android:id="@+id/choiceText"
@@ -15,57 +16,61 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="serif"
+        android:fontFamily="@font/orbitron"
         android:gravity="center"
-        android:text="Select pickup line category:"
+        android:text="Choose the Topic You Prefer:"
+        android:textColor="@color/White"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.224" />
+        app:layout_constraintVertical_bias="0.18" />
 
     <Button
         android:id="@+id/ChemButton"
-        android:layout_width="129dp"
+        android:layout_width="130dp"
         android:layout_height="105dp"
         android:layout_margin="40dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/Green"
-        android:fontFamily="cursive"
-        android:textStyle="bold"
+        android:background="@drawable/second_gradient"
+        android:fontFamily="@font/orbitron"
         android:text="BioChem"
-        android:textColor="@color/Yellow"
+        android:textColor="@color/White"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/CSButton"
-        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.814" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <Button
         android:id="@+id/CSButton"
-        android:layout_width="125dp"
+        android:layout_width="130dp"
         android:layout_height="105dp"
         android:layout_margin="40dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/PitchBlack"
-        android:fontFamily="cursive"
-        android:textStyle="bold"
-        android:textColor="@color/NeonGreen"
+        android:background="@drawable/second_gradient"
+        android:fontFamily="@font/orbitron"
         android:text="CompSci"
+        android:textColor="@color/White"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.816" />
+        app:layout_constraintVertical_bias="0.65" />
 
 
 </android.support.constraint.ConstraintLayout>

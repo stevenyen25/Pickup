@@ -21,6 +21,10 @@
         <activity android:name=".choiceActivity"></activity>
         <activity android:name=".csActivity"></activity>
         <activity android:name=".ChemActivity"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

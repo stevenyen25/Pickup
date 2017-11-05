@@ -18,4 +18,9 @@
     <color name="Green">#4CAF50</color>.
     <color name="Grey">#90A4AE</color>.
     <color name="DarkGrey">#607D8B</color>.
+    <color name="blue1">#26A1E9</color>
+    <color name="blue2">#0056D2</color>
+    <color name="blue3">#21416E</color>
+    <color name="blue4">#080D1A</color>
+    <color name="gray1">#A8B3BE</color>
 </resources>
