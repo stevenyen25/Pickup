@@ -7,37 +7,43 @@
 
     <TextView
         android:id="@+id/chemBody"
-        android:layout_width="333dp"
-        android:layout_height="388dp"
+        android:layout_width="295dp"
+        android:layout_height="347dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Generate a List When you open the page"
+        android:text="Press Generate to Create the Perfect Pickup Line"
+        android:gravity="center"
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintVertical_bias="0.364" />
 
     <TextView
         android:id="@+id/chemHeader"
-        android:layout_width="179dp"
-        android:layout_height="27dp"
+        android:layout_width="234dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Chemisty Pickup Lines"
+        android:text="Chemistry Pickup Lines"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/chemGenerate"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
+        android:layout_width="142dp"
+        android:layout_height="67dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"

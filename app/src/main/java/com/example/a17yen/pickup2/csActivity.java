@@ -1,5 +1,6 @@
 package com.example.a17yen.pickup2;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import org.jsoup.select.Elements;
 public class csActivity extends AppCompatActivity{
     TextView text;
     String [] elements;
+    int index = 0;
+    public Button button;
 
 
 
@@ -21,24 +24,36 @@ public class csActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cs);
-
-
         text = findViewById(R.id.csBody);
-        Button button = findViewById(R.id.csGenerate);
 
+        click();
+        new csActivity.scrapeCS().execute();
+
+    }
+
+    public void click(){
+        button = findViewById(R.id.csGenerate);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
 
-                new csActivity.scrapeCS().execute();
+                text.setText(elements[index]);
+                index++;
             }
         });
     }
 
-
     public class scrapeCS extends AsyncTask<Void, Void, Void> {
         String words = "";
         @Override
+        /*
+        Web scraping algorithm. Had to be hard coded to a particular website because the task otherwise
+        was too difficult to complete within the given amount of time. In the future, the algorithm will be able
+        to scrape regardless of website.
+
+        No return type. Scrapes data from websites and stores it inside a String array.
+         */
+
         protected Void doInBackground(Void... params){
 
             try {
@@ -67,7 +82,6 @@ public class csActivity extends AppCompatActivity{
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            text.setText(elements[0] + "\n"+ "\n"+elements[1] + "\n"+ "\n"+elements[2]);
         }
     }
 }

@@ -14,21 +14,30 @@ import org.jsoup.select.Elements;
 public class ChemActivity extends AppCompatActivity{
     String [] elements;
     TextView text;
+    public Button button;
+    int index = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chem);
-
-
         text = (TextView)findViewById(R.id.chemBody);
-        Button button = (Button) findViewById(R.id.chemGenerate);
 
+        new ChemActivity.scrapeChem().execute();
+        click();
+
+
+
+
+    }
+
+    public void click(){
+        button = findViewById(R.id.chemGenerate);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                new ChemActivity.scrapeChem().execute();
+            public void onClick(View v) {
+                text.setText(""+elements[index]);
+                index++;
             }
         });
     }
@@ -47,7 +56,7 @@ public class ChemActivity extends AppCompatActivity{
                     words +=e;
                 }
                 String[] stringArr = words.split("<li>");
-                words="</li>";
+                words="";
                 for(String s: stringArr){
                     words +=s;
                 }
@@ -69,7 +78,6 @@ public class ChemActivity extends AppCompatActivity{
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            text.setText(elements[0] + "\n"+ "\n"+elements[1] + "\n"+ "\n"+elements[2]);
         }
     }
 }
