@@ -3,4 +3,19 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="BabyBlue">#11abf7</color>
+    <color name="MintGreen">#69F0AE</color>
+    <color name="PitchBlack">#000000</color>
+    <color name="NeonGreen">#76FF03</color>
+    <color name="LightBlue">#18FFFF</color>
+    <color name="Red">#F44336</color>
+    <color name="Orange">#FF9800</color>
+    <color name="SkyBlue">#B3E5FC</color>
+    <color name="DarkRed">#DD2C00</color>
+    <color name="White">#FFFFFF</color>
+    <color name="MintGreen2">#69F0AE</color>
+    <color name="Yellow">#FFEB3B</color>.
+    <color name="Green">#4CAF50</color>.
+    <color name="Grey">#90A4AE</color>.
+    <color name="DarkGrey">#607D8B</color>.
 </resources>

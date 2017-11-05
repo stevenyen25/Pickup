@@ -4,37 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/BabyBlue"
     tools:context="com.example.a17yen.pickup2.MainActivity">
 
     <TextView
         android:id="@+id/mainText"
-        android:layout_width="218dp"
-        android:layout_height="79dp"
+        android:layout_width="0dp"
+        android:layout_height="129dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="104dp"
         android:gravity="center"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Why Are You Using This Application??"
-        android:textSize="25dp"
+        android:text='You had me at "Hello World"'
+        android:textColor="@color/colorAccent"
+        android:textSize="50sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonFirst"
-        android:layout_width="233dp"
-        android:layout_height="86dp"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="End Your Social Life"
-        android:textSize="25dp"
+        android:text="Enter World!"
+        android:textColor="@color/BabyBlue"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mainText" />
+        app:layout_constraintTop_toBottomOf="@+id/mainText" />
 
 </android.support.constraint.ConstraintLayout>
 

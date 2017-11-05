@@ -4,23 +4,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/SkyBlue">
 
+    <TextView
+        android:id="@+id/choiceText"
+        android:layout_width="280dp"
+        android:layout_height="129dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="Select pickup line category:"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.224" />
 
     <Button
         android:id="@+id/ChemButton"
-        android:layout_width="125dp"
+        android:layout_width="129dp"
         android:layout_height="105dp"
         android:layout_margin="40dp"
         android:layout_marginBottom="32dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:textSize="18sp"
+        android:background="@color/Green"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
         android:text="Chemistry"
+        android:textColor="@color/Yellow"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/CSButton"
+        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584" />
+        app:layout_constraintVertical_bias="0.814" />
 
     <Button
         android:id="@+id/CSButton"
@@ -30,28 +56,16 @@
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="36dp"
         android:layout_marginTop="8dp"
+        android:background="@color/PitchBlack"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:textColor="@color/NeonGreen"
         android:text="CompSci"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587" />
+        app:layout_constraintVertical_bias="0.816" />
 
-    <TextView
-        android:id="@+id/choiceText"
-        android:layout_width="276dp"
-        android:layout_height="129dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="What Type of Pickup Line Do You Want?"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.205" />
 
 </android.support.constraint.ConstraintLayout>
