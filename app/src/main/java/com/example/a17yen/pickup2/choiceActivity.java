@@ -1,3 +1,9 @@
+/*
+This is the second View that users interact with.
+It contains a TextView object and two Button objects.
+Each Button object when clicked accesses the next view in relation to that object.
+ */
+
 package com.example.a17yen.pickup2;
 
 import android.os.AsyncTask;
@@ -40,6 +46,9 @@ public class choiceActivity extends AppCompatActivity {
 
 
 
+    /*
+    A simple onClick method that moves onto the chemActivity class.
+     */
     public void clickChem(){
         chemB=(Button)findViewById(R.id.ChemButton);
         chemB.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +60,9 @@ public class choiceActivity extends AppCompatActivity {
         });
     }
 
+    /*
+    A simple onClick method that moves onto the csActivity class.
+     */
     public void clickCS(){
         csB=(Button)findViewById(R.id.CSButton);
         csB.setOnClickListener(new View.OnClickListener() {
