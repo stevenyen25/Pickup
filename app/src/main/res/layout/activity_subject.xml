@@ -38,7 +38,7 @@
         android:background="@color/Green"
         android:fontFamily="cursive"
         android:textStyle="bold"
-        android:text="Chemistry"
+        android:text="BioChem"
         android:textColor="@color/Yellow"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

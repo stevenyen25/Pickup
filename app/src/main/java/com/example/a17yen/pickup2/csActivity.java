@@ -17,6 +17,7 @@ public class csActivity extends AppCompatActivity{
     String [] elements;
     int index = 0;
     public Button button;
+    boolean isDone;
 
 
 
@@ -36,9 +37,14 @@ public class csActivity extends AppCompatActivity{
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                text.setText(elements[index]);
-                index++;
+                if(elements[index].equals(" </span>")) { isDone = true; }
+                if (!isDone) {
+                    text.setText(elements[index]);
+                    index++;
+                }
+                else{
+                    text.setText("This is the end of CS Lines, check out our Chem Lines!!");
+                }
             }
         });
     }

@@ -12,10 +12,11 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class ChemActivity extends AppCompatActivity{
-    String [] elements;
-    TextView text;
+    public String [] elements;
+    public TextView text;
     public Button button;
-    int index = 0;
+    public int index = 0;
+    boolean isDone = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +24,8 @@ public class ChemActivity extends AppCompatActivity{
         setContentView(R.layout.activity_chem);
         text = (TextView)findViewById(R.id.chemBody);
 
-        new ChemActivity.scrapeChem().execute();
         click();
-
-
-
-
+        new ChemActivity.scrapeChem().execute();
     }
 
     public void click(){
@@ -36,8 +33,14 @@ public class ChemActivity extends AppCompatActivity{
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text.setText(""+elements[index]);
-                index++;
+                if(elements[index].equals(" </span>")) { isDone = true; }
+                if (!isDone) {
+                    text.setText(elements[index]);
+                    index++;
+                }
+                else{
+                    text.setText("This is the end of BioChem Lines, check out our CompSci Lines!!");
+                }
             }
         });
     }
@@ -49,18 +52,12 @@ public class ChemActivity extends AppCompatActivity{
         protected Void doInBackground(Void... params){
 
             try {
-                org.jsoup.nodes.Document doc = Jsoup.connect("http://pickuplinesguru.com/chemistry/").get();
-                Elements elems  = doc.getElementsByClass("lines");
-
+                org.jsoup.nodes.Document doc = Jsoup.connect("http://www.pickuplinesgalore.com/biochem.html").get();
+                Elements elems  = doc.getElementsByClass("paragraph-text-7");
                 for(Element e: elems){
                     words +=e;
                 }
-                String[] stringArr = words.split("<li>");
-                words="";
-                for(String s: stringArr){
-                    words +=s;
-                }
-                stringArr = words.split("</li>");
+                String[] stringArr = words.split("<br>\n {2,}<br>\n|<br>\n| {2,}|<br>");
                 elements = new String[stringArr.length];
                 int count = 0;
                 for(int i = 0; i < stringArr.length; i++){
